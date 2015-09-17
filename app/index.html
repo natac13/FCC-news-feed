@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="FCC challenge to use API to get news">
+      <meta name="author" content="Sean Campbell">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+
+      <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+  <body ng-app="newsApp">
+      <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <main class="container-fluid">
+      <header class="text-center">
+        <h1>
+          Camper News <a href="http://www.freecodecamp.com/">Free Code Camp</a>
+        </h1>
+      </header>
+
+    <div class="container" ng-controller="NewsFeedCtrl">
+      <ul class="list-unstyled">
+        <li ng-repeat="feed in newsObjs">
+          <div class="row">
+            <div class="col-xs-3">
+              <img ng-src="{{feed.image}}" width="200px" height="200px"
+                alt="Pic of Link or the User's display pic">
+            </div>
+            <div class="col-xs-8">
+              <h2>{{feed.username}}</h2>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+
+    </main>
+
+
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

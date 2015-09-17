@@ -1,0 +1,19 @@
+{
+  "name": "fcc-news-app",
+  "version": "0.0.1",
+  "description": "A challenge from Free Code Camp to display the news stories from an API",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -a 127.0.0.1 -p 8080",
+    "test": "karma start"
+  },
+  "author": "Sean Campbell",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.8.0",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-jasmine": "^0.3.6"
+  }
+}

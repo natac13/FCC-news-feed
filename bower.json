@@ -1,0 +1,26 @@
+{
+  "name": "FCCNewsApp",
+  "version": "0.0.0",
+  "authors": [
+    "natac13 <sean.campbell13@gmail.com>"
+  ],
+  "description": "FCC Challenge",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "~1.4.6",
+    "angular-resource": "~1.4.6",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.6"
+  }
+}
