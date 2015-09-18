@@ -4,7 +4,7 @@
   "description": "A challenge from Free Code Camp to display the news stories from an API",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -a 127.0.0.1 -p 8080",
+    "start": "node_modules/http-server/bin/http-server -a 127.0.0.1 -p 8080",
     "test": "karma start",
     "sass": "sass --watch app/css/src/:app/css/dist"
   },
