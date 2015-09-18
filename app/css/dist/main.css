@@ -1,3 +1,8 @@
-
+.news-feed {
+  height: auto;
+  width: 200px;
+  margin: 0.5em;
+  display: inline-block;
+  vertical-align: top; }
 
 /*# sourceMappingURL=main.css.map */

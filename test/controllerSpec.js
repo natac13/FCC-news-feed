@@ -69,7 +69,9 @@ describe('NewsFeedCtrl', function() {
             httpBack.flush();
             scope.newsObjs = scope.makeNews()
             expect(scope.data.length).toEqual(scope.newsObjs.length);
-        })
+        });
+
+
     });
 
 

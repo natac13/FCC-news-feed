@@ -27,21 +27,16 @@
         </h1>
       </header>
 
-    <div class="container" ng-controller="NewsFeedCtrl">
-      <ul class="list-unstyled">
-        <li ng-repeat="feed in newsObjs | limitTo:10">
-          <div class="row">
-            <div class="col-xs-3">
-              <img ng-src="{{feed.image}}" width="200px" height="200px"
+      <div class="container" ng-controller="NewsFeedCtrl">
+        <div class="news-feed" ng-repeat="feed in newsObjs | limitTo:10">
+          <img ng-src="{{feed.image}}" width="200px" height="200px"
                 alt="Pic of Link or the User's display pic">
-            </div>
-            <div class="col-xs-8">
-              <h2>{{feed.username}}</h2>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+          <a href="{{feed.link}}">
+                <h2>{{feed.headline}}</h2>
+              </a>
+              <p>Posted by: {{feed.username}}</p>
+        </div>
+      </div>
 
 
 
