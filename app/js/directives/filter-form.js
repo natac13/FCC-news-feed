@@ -1,4 +1,4 @@
-angular.module('appDirectives', [])
+angular.module('appDirectives')
 .directive('filterForm', function(){
     // Runs during compile
     return {

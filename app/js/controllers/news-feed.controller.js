@@ -1,4 +1,4 @@
-angular.module('appControllers', [])
+angular.module('appControllers')
     .controller('NewsFeedController', NewsFeedController);
 // I feel the function below is the one I would export and then import this file
 // to app.js and have .controller and .filter attached right to the main app
