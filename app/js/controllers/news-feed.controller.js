@@ -1,18 +1,17 @@
 angular.module('appControllers', [])
-    .controller('NewsFeedCtrl', ['$http', '$scope', function($http, $scope) {
-        $scope.filter = {
-            xlimit: 20,
-            orderName: false,
-            orderVotes: false,
-            orderDate: false
-        }
+    .controller('NewsFeedController', ['$http', function($http) {
+        var vm = this;
+        vm.xlimit     = 20;
+        vm.orderName  = false;
+        vm.orderVotes = false;
+        vm.orderDate  = false;
         $http.get('http://www.freecodecamp.com/news/hot')
         .then(function(response) {
-            $scope.data = response.data;
+            vm.data = response.data;
 
-            $scope.makeNews = function() {
+            vm.makeNews = function() {
                 var list = [];
-                angular.forEach($scope.data, function(obj) {
+                angular.forEach(vm.data, function(obj) {
                     var tmp = {
                         'headline': obj.headline,
                         'link': obj.link,
@@ -27,6 +26,6 @@ angular.module('appControllers', [])
                 });
                 return list;
             }; // end makeNews()
-            $scope.newsObjs = $scope.makeNews();
+            vm.newsObjs = vm.makeNews();
         });
     }]);

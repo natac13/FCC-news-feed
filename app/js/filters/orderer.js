@@ -27,9 +27,9 @@ angular.module('appFilters')
                 return 1;
             }
             return 0;
-        }
+        };
         return action ? inputList.sort(comparer) : inputList;
-    }
+    };
 })
 .filter('orderVotes', function() {
     return function(inputList, action) {
@@ -41,9 +41,9 @@ angular.module('appFilters')
                 return -1;
             }
             return 0;
-        }
+        };
         return action ? inputList.sort(comparer) : inputList;
-    }
+    };
 })
 .filter('orderDate', function() {
     return function(inputList, action) {
@@ -55,7 +55,7 @@ angular.module('appFilters')
                 return -1;
             }
             return 0;
-        }
+        };
         return action ? inputList.sort(comparer) : inputList;
-    }
-})
+    };
+});

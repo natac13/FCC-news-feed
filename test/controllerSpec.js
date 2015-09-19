@@ -1,4 +1,4 @@
-describe('NewsFeedCtrl', function() {
+describe('NewsFeedController', function() {
     // load in the module before each test
     beforeEach(module('newsApp'));
     var httpBack,
@@ -27,7 +27,7 @@ describe('NewsFeedCtrl', function() {
 
     beforeEach(function() {
         scope = rootScope.$new();
-        crtl = controller('NewsFeedCtrl', { $scope: scope });
+        ctrl = controller('NewsFeedController', { $scope: scope });
 
     });
 
@@ -60,15 +60,15 @@ describe('NewsFeedCtrl', function() {
         });
 
         it('should have $scope.data undefined before http call', function() {
-            expect(scope.data).toBeUndefined();
+            expect(ctrl.data).toBeUndefined();
             httpBack.flush();
-            expect(scope.data).toBeDefined();
+            expect(ctrl.data).toBeDefined();
         });
 
         it('should have $scope.newsObjs equal in length to the $scope.data', function() {
             httpBack.flush();
-            scope.newsObjs = scope.makeNews()
-            expect(scope.data.length).toEqual(scope.newsObjs.length);
+            ctrl.newsObjs = ctrl.makeNews()
+            expect(ctrl.data.length).toEqual(ctrl.newsObjs.length);
         });
 
 
