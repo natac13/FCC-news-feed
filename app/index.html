@@ -31,7 +31,7 @@
       <form role="form" class="form-inline" accept-charset="utf-8">
         <div class="form-group">
         <label for="limit">Limit the list</label>
-          <select name="limit" id="limit" ng-model="xlimit">
+          <select name="limit" id="limit" ng-model="filter.xlimit">
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="20">20</option>
@@ -39,26 +39,35 @@
           </select>
         </div>
         <div class="form-group">
-          <select name="order" ng-model="xorder">
-            <option value="Date">Date</option>
-            <option value="Camper">Camper</option>
-            <option value="UpVotes">UpVotes</option>
-          </select>
+          <label>OrderBy Camper:
+              <input type="checkbox" ng-model="filter.orderName">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>OrderBy UpVotes:
+              <input type="checkbox" ng-model="filter.orderVotes">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>OrderBy Date Created:
+              <input type="checkbox" ng-model="filter.date">
+          </label>
         </div>
       </form>
-        <div class="news-feed" ng-repeat="feed in newsObjs | limitTo: xlimit" >
+        <div class="news-feed" ng-repeat="feed in newsObjs | limiter:filter.xlimit | orderName:filter.orderName | orderVotes:filter.orderVotes |orderDate:filter.date">
           <img ng-src="{{feed.image}}" width="200px" height="200px"
                 alt="Pic of Link or the User's display pic">
           <a href="{{feed.link}}">
             <h2>{{feed.headline}}</h2>
           </a>
-          <a href="#" class="btn btn-default"
+          <a  class="btn btn-default"
             ng-click="feed.display = !feed.display">
             Extra Info
           </a>
           <div ng-show="feed.display">
             <p>Posted by: {{feed.username}}</p>
             <p>Created on: {{feed.created | date}}</p>
+            <p>UpVotes: {{feed.rank}}</p>
           </div>
         </div>
       </div>
@@ -71,7 +80,8 @@
   <script src="../bower_components/angular/angular.min.js"></script>
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
+  <script src="js/filters/limit.js"></script>
+  <script src="js/filters/orderer.js"></script>
   <script src="js/controllers/news-feed-controller.js"></script>
   <script src="js/app.js"></script>
 

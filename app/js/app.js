@@ -1,5 +1,5 @@
 (function() {
-    angular.module('newsApp', ['appControllers'])
+    angular.module('newsApp', ['appFilters', 'appControllers'])
 
 
 })();

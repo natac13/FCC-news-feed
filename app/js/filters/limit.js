@@ -1,7 +1,7 @@
 angular.module('appFilters', [])
-.filter('limiter', funciton() {
-    return function(newsObjList) {
-        return newsObjList.slice(0, 10);
+.filter('limiter', function() {
+    return function(newsObjList, amount) {
+        return newsObjList.slice(0, amount);
     }
 });
 

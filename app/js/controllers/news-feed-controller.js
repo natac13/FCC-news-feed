@@ -1,6 +1,11 @@
 angular.module('appControllers', [])
     .controller('NewsFeedCtrl', ['$http', '$scope', function($http, $scope) {
-        $scope.xlimit = 10;
+        $scope.filter = {
+            xlimit: 20,
+            orderName: false,
+            orderVotes: false,
+            orderDate: false
+        }
         $http.get('http://www.freecodecamp.com/news/hot')
         .then(function(response) {
             $scope.data = response.data;
