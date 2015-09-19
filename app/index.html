@@ -28,32 +28,9 @@
       </header>
 
       <div class="container" ng-controller="NewsFeedController as news">
-      <form role="form" class="form-inline" accept-charset="utf-8">
-        <div class="form-group">
-        <label for="limit">Limit the list</label>
-          <select name="limit" id="limit" ng-model="news.xlimit">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>OrderBy Camper:
-              <input type="checkbox" ng-model="news.orderName">
-          </label>
-        </div>
-        <div class="form-group">
-          <label>OrderBy UpVotes:
-              <input type="checkbox" ng-model="news.orderVotes">
-          </label>
-        </div>
-        <div class="form-group">
-          <label>OrderBy Date Created:
-              <input type="checkbox" ng-model="news.date">
-          </label>
-        </div>
-      </form>
+
+        <filter-form></filter-form>
+
         <div class="news-feed" ng-repeat="feed in news.newsObjs | limiter:news.xlimit | orderName:news.orderName | orderVotes:news.orderVotes |orderDate:news.date">
           <img ng-src="{{feed.image}}" width="200px" height="200px"
                 alt="Pic of Link or the User's display pic">
@@ -65,7 +42,7 @@
             Extra Info
           </a>
           <div ng-show="feed.display">
-            <p>Posted by: {{feed.username}}</p>
+            <p>Posted by: {{feed.username}} <small>email: {{feed.email}}</small></p>
             <p>Created on: {{feed.created | date}}</p>
             <p>UpVotes: {{feed.rank}}</p>
           </div>
@@ -81,7 +58,10 @@
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/filters/limit.js"></script>
-  <script src="js/filters/orderer.js"></script>
+  <script src="js/filters/name.js"></script>
+  <script src="js/filters/date.js"></script>
+  <script src="js/filters/votes.js"></script>
+  <script src="js/directives/filter-form.js"></script>
   <script src="js/controllers/news-feed.controller.js"></script>
   <script src="js/app.js"></script>
 
