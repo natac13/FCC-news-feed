@@ -47,8 +47,11 @@ header h1 {
   margin: 0.5em;
   display: inline-block;
   vertical-align: top;
-  background: #D9DAD7;
-  border-radius: 2em; }
+  background: rgba(217, 218, 215, 0.6);
+  border-radius: 2em;
+  transition: background 0.8s ease-out; }
+  .news-feed:hover {
+    background: #d9dad7; }
   .news-feed.big {
     height: auto; }
   .news-feed img {
