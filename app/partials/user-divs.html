@@ -1,0 +1,17 @@
+<div class="news-feed" ng-repeat="feed in news.newsObjs | limiter:news.xlimit | orderName:news.orderName | orderVotes:news.orderVotes |orderDate:news.date" ng-class="{'big': feed.display}">
+  <img ng-src="{{feed.image}}" width="100px" height="100px"
+        alt="Pic of Link or the User's display pic"
+        class="img-responsive img-rounded">
+  <a class="headline" href="{{feed.link}}" target="_blank">
+    <h2>{{feed.headline}}</h2>
+  </a>
+  <a  class="btn btn-default extra-info"
+    ng-click="feed.display = !feed.display">
+    Extra Info
+  </a>
+  <div ng-show="feed.display">
+    <p>Posted by: {{feed.username}} <small>email: {{feed.email}}</small></p>
+    <p>Created on: {{feed.created | date}}</p>
+    <p>UpVotes: {{feed.rank}}</p>
+  </div>
+</div>

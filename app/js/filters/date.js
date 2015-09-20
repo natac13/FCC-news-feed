@@ -10,6 +10,6 @@ angular.module('appFilters')
             }
             return 0;
         };
-        return action ? inputList.sort(comparer) : inputList;
+        return action || false ? inputList.sort(comparer) : inputList;
     };
 });

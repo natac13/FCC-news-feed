@@ -1,5 +1,5 @@
-<form role="form" class="form-inline" accept-charset="utf-8">
-  <div class="form-group">
+<form role="form" class="form-inline center-block" accept-charset="utf-8">
+  <div class="form-group col-md-3 col-xs-6">
   <label for="limit">Limit the list</label>
     <select name="limit" id="limit" ng-model="news.xlimit">
       <option value="5">5</option>
@@ -8,17 +8,17 @@
       <option value="50">50</option>
     </select>
   </div>
-  <div class="form-group">
+  <div class="form-group col-md-3 col-xs-6">
     <label for="order-name">OrderBy Camper:
         <input type="checkbox" id="order-name" ng-model="news.orderName">
     </label>
   </div>
-  <div class="form-group">
+  <div class="form-group col-md-3 col-xs-6">
     <label for="order-votes">OrderBy UpVotes:
         <input type="checkbox" id="order-votes" ng-model="news.orderVotes">
     </label>
   </div>
-  <div class="form-group">
+  <div class="form-group col-md-3 col-xs-6">
     <label for="order-date">OrderBy Date Created:
         <input type="checkbox" id="order-date" ng-model="news.date">
     </label>

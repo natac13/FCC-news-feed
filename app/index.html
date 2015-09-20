@@ -10,43 +10,30 @@
       <meta name="description" content="FCC challenge to use API to get news">
       <meta name="author" content="Sean Campbell">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="css/dist/main.css">
 
       <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
-  <body ng-app="newsApp">
+  <body ng-app="newsApp" class="text-center">
       <!--[if lt IE 7]>
           <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
     <main class="container-fluid">
       <header class="text-center">
         <h1>
-          Camper News <a href="http://www.freecodecamp.com/">Free Code Camp</a>
+          Camper News <a href="http://www.freecodecamp.com/" target="_blank">
+            Free Code Camp</a>
         </h1>
       </header>
 
-      <div class="container" ng-controller="NewsFeedController as news">
-
-        <filter-form></filter-form>
-
-        <div class="news-feed" ng-repeat="feed in news.newsObjs | limiter:news.xlimit | orderName:news.orderName | orderVotes:news.orderVotes |orderDate:news.date">
-          <img ng-src="{{feed.image}}" width="200px" height="200px"
-                alt="Pic of Link or the User's display pic">
-          <a href="{{feed.link}}">
-            <h2>{{feed.headline}}</h2>
-          </a>
-          <a  class="btn btn-default"
-            ng-click="feed.display = !feed.display">
-            Extra Info
-          </a>
-          <div ng-show="feed.display">
-            <p>Posted by: {{feed.username}} <small>email: {{feed.email}}</small></p>
-            <p>Created on: {{feed.created | date}}</p>
-            <p>UpVotes: {{feed.rank}}</p>
-          </div>
+      <div ng-controller="NewsFeedController as news">
+        <div class="container">
+          <filter-form></filter-form>
         </div>
+
+        <user-divs></user-divs>
       </div>
 
 
@@ -61,6 +48,7 @@
 
   <script src="js/controllers/news-feed.controller.js"></script>
   <script src="js/directives/filter-form.js"></script>
+  <script src="js/directives/user-divs.js"></script>
   <script src="js/filters/limit.js"></script>
   <script src="js/filters/name.js"></script>
   <script src="js/filters/date.js"></script>

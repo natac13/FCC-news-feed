@@ -4,7 +4,7 @@ angular.module('appControllers')
 // to app.js and have .controller and .filter attached right to the main app
 function NewsFeedController($http) {
     var vm = this;
-    vm.xlimit     = 20;
+    vm.xlimit     = 50;
     vm.orderName  = false;
     vm.orderVotes = false;
     vm.orderDate  = false;
@@ -16,7 +16,8 @@ function NewsFeedController($http) {
             var list = [];
             angular.forEach(vm.data, function(obj) {
                 var tmp = {
-                    'headline': obj.headline,
+                    'headline': obj.headline.length > 45 ?
+                        obj.headline.slice(0, 45) + '...' : obj.headline,
                     'link': obj.link,
                     'rank': obj.rank,
                     'username': obj.author.username,
